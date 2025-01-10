@@ -1,0 +1,70 @@
+The let keyword in JavaScript is used to declare variables. It was introduced in ES6 (ECMAScript 2015) and provides several key features and improvements over the older var keyword. Here's a detailed explanation:
+
+1. Block Scope
+Variables declared with let are limited to the block, statement, or expression where they are defined. A block is typically defined by {} (curly braces).
+
+Example:
+
+{
+  let x = 10;
+  console.log(x); // 10
+}
+console.log(x); // ReferenceError: x is not defined
+
+The variable x exists only within the {} block.
+
+2. No Hoisting (or Limited Hoisting)
+Variables declared with let are hoisted, but they are not initialized until their definition is encountered. This creates a "temporal dead zone" (TDZ), where accessing the variable before its declaration results in a ReferenceError.
+
+Example:
+
+console.log(a); // ReferenceError: Cannot access 'a' before initialization
+let a = 5;
+
+3. Reassignment Allowed
+You can reassign a value to a variable declared with let.
+
+Example:
+
+let a = 10;
+a = 20;
+console.log(a); // 20
+
+4. Cannot Be Redeclared in the Same Scope
+Unlike var, you cannot redeclare a variable declared with let in the same scope.
+
+Example:
+
+let a = 5;
+let a = 10; // SyntaxError: Identifier 'a' has already been declared
+
+5. Useful in Loops
+The let keyword is particularly useful in for loops because it creates a new scope for each iteration.
+
+Example:
+
+for (let i = 0; i < 3; i++) {
+  console.log(i); // 0, 1, 2
+}
+console.log(i); // ReferenceError: i is not defined
+With let, the loop variable i exists only within the loop block.
+
+Comparison with var
+Feature	var	let
+Scope	Function or global	Block
+Hoisting	Yes, initialized as undefined	Yes, but TDZ applies
+Redeclaration	Allowed	Not allowed
+Use in Loops	Same variable reused	New variable per iteration
+When to Use let
+Use let when the value of a variable may change over time.
+It ensures proper scoping and avoids common bugs caused by var's global or function scope.
+Example Use Case
+
+function printNumbers() {
+  for (let i = 1; i <= 3; i++) {
+    setTimeout(() => console.log(i), i * 1000); // 1, 2, 3 (each printed after 1, 2, 3 seconds)
+  }
+}
+
+printNumbers();
+If var were used, all the timeouts would print 4 because var does not create a new scope for each iteration. Using let avoids this issue.

@@ -1,0 +1,53 @@
+What is an Arrow Function?
+An arrow function is a concise way to write functions in JavaScript. It’s especially useful for writing short, one-line functions or functions used as arguments to other functions. The syntax is cleaner compared to traditional function expressions.
+
+Example Breakdown
+Here's the example from the image:
+
+
+const numbers = [1, 2, 3, 4, 5];
+
+const doubled = numbers.map(n => n * 2);
+
+console.log(doubled); // [2, 4, 6, 8, 10]
+Explanation
+Step 1: What is numbers?
+numbers is an array containing the elements [1, 2, 3, 4, 5].
+
+Step 2: What is map()?
+The .map() method is used to create a new array by applying a given function to each element of the original array.
+
+Step 3: Arrow Function in map()
+n => n * 2 is the arrow function being passed to .map().
+This arrow function takes a single parameter n (each element of the numbers array).
+It returns the result of multiplying n by 2.
+Step 4: What happens in map()?
+The .map() method processes each element of the numbers array using the arrow function:
+
+For n = 1, the arrow function calculates 1 * 2 = 2.
+For n = 2, the arrow function calculates 2 * 2 = 4.
+For n = 3, the arrow function calculates 3 * 2 = 6.
+For n = 4, the arrow function calculates 4 * 2 = 8.
+For n = 5, the arrow function calculates 5 * 2 = 10.
+Step 5: The Result
+The result of .map() is a new array [2, 4, 6, 8, 10]. This array is stored in the doubled variable.
+
+When you log doubled using console.log(doubled), you see [2, 4, 6, 8, 10].
+
+Why Use Arrow Functions?
+Concise Syntax: Instead of writing:
+
+
+const doubled = numbers.map(function(n) {
+    return n * 2;
+});
+You can simply write:
+
+
+const doubled = numbers.map(n => n * 2);
+Implicit Return: In single-line arrow functions, the return keyword is implied. No need to explicitly write return.
+
+Key Points to Remember
+Arrow Functions Are Shorter: They save you from writing boilerplate code.
+this Behavior: Arrow functions don’t have their own this context, which can be useful in some scenarios.
+Perfect for Callbacks: Functions like .map(), .filter(), and .reduce() often use arrow functions because they make the code more concise.

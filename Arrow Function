@@ -1,6 +1,7 @@
 What is an Arrow Function?
 An arrow function is a concise way to write functions in JavaScript. It’s especially useful for writing short, one-line functions or functions used as arguments to other functions. The syntax is cleaner compared to traditional function expressions.
 
+
 Example Breakdown
 Here's the example from the image:
 

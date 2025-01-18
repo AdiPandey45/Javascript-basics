@@ -7,8 +7,7 @@ document.getElementById("id");             // Select by ID
 document.querySelector(".class");          // Select first matching element by selector 
 document.querySelector("#id");             // Select using CSS-like syntax
 Multiple Element Selectors:
-
-
+ 
 document.getElementsByClassName("class");  // Select by class name
 document.getElementsByTagName("tag");      // Select by tag name 
 document.querySelectorAll(".class");       // Select all matching elements 

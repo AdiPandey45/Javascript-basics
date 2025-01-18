@@ -1,7 +1,7 @@
 1. Selecting Elements
 You need to select DOM elements before manipulating them.
 
-Single Element Selectors:
+Single Element Selectors:  
 
 document.getElementById("id");             // Select by ID
 document.querySelector(".class");          // Select first matching element by selector 

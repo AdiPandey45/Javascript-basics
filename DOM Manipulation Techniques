@@ -1,0 +1,167 @@
+1. Selecting Elements
+You need to select DOM elements before manipulating them.
+
+Single Element Selectors:
+
+document.getElementById("id");             // Select by ID
+document.querySelector(".class");          // Select first matching element by selector
+document.querySelector("#id");             // Select using CSS-like syntax
+Multiple Element Selectors:
+
+
+document.getElementsByClassName("class");  // Select by class name
+document.getElementsByTagName("tag");      // Select by tag name
+document.querySelectorAll(".class");       // Select all matching elements
+
+
+2. Traversing the DOM
+Navigate between parent, child, and sibling elements.
+
+Parent and Ancestors:
+element.parentElement;      // Direct parent
+element.closest(".selector"); // Closest ancestor matching selector
+
+Children:
+element.children;           // All child elements
+element.firstElementChild;  // First child element
+element.lastElementChild;   // Last child element
+
+Siblings:
+element.previousElementSibling; // Previous sibling
+element.nextElementSibling;     // Next sibling
+3. Changing Content
+Modify the content of DOM elements.
+
+Inner Text and HTML:
+
+element.textContent = "Hello World";  // Set text
+element.innerHTML = "<b>Hello</b>";   // Set HTML
+element.outerHTML = "<div>New</div>"; // Replace the element entirely
+
+Attributes:
+element.setAttribute("attribute", "value"); // Set attribute
+element.getAttribute("attribute");          // Get attribute
+element.removeAttribute("attribute");       // Remove attribute
+
+4. Adding and Removing Elements
+Manipulate the DOM structure by adding or removing elements.
+
+Create and Append:
+
+const newElement = document.createElement("div");
+newElement.textContent = "I am new!";
+document.body.appendChild(newElement);    // Append to body
+parentElement.appendChild(newElement);    // Append to a specific parent
+parentElement.insertBefore(newElement, referenceElement); // Insert before another element
+
+
+Remove Elements:
+element.remove();                          // Remove element
+parentElement.removeChild(childElement);   // Remove specific child
+
+
+Replace Elements:
+parentElement.replaceChild(newElement, oldElement); // Replace one child with another
+5. Styling Elements
+Change or get the styles of elements dynamically.
+
+Inline Styles:
+element.style.color = "red";        // Change color
+element.style.backgroundColor = "yellow"; // Change background color
+
+
+CSS Classes:
+element.classList.add("new-class");    // Add a class
+element.classList.remove("old-class"); // Remove a class
+element.classList.toggle("class");    // Toggle a class
+element.classList.contains("class");  // Check if a class exists
+
+
+6. Event Listeners
+Handle user interactions or other events.
+
+Adding Events:
+element.addEventListener("click", function() {
+    console.log("Element clicked!");
+});
+
+
+Removing Events:
+element.removeEventListener("click", eventHandler);
+Common Event Types:
+
+click - Mouse click
+mouseover - Hover over an element
+keydown, keyup - Keyboard events
+submit - Form submission
+load - Page or resource load
+
+
+7. Working with Forms
+Manipulate forms and their values.
+
+Getting Input Values:
+
+const input = document.getElementById("myInput");
+console.log(input.value);       // Get the value
+input.value = "New Value";      // Set the value
+
+Handling Form Events:
+formElement.addEventListener("submit", function(event) {
+    event.preventDefault();  // Prevent page reload
+    console.log("Form submitted!");
+});
+
+
+8. Dimensions and Position
+Retrieve size and position of elements.
+
+Size:
+element.offsetWidth;        // Width (including borders)
+element.offsetHeight;       // Height (including borders)
+element.clientWidth;        // Width (excluding borders)
+element.clientHeight;       // Height (excluding borders)
+
+
+Position:
+element.offsetTop;          // Distance from top of the parent
+element.offsetLeft;         // Distance from left of the parent
+
+9. Miscellaneous
+Focus and Blur:
+inputElement.focus();      // Focus the input
+inputElement.blur();       // Remove focus
+
+
+Scroll to Element:
+element.scrollIntoView({ behavior: "smooth" }); // Smooth scroll to element
+
+
+Custom Data Attributes:
+element.dataset.key = "value";   // Set data-key attribute
+console.log(element.dataset.key); // Get value of data-key
+10. Document and Window
+
+
+Access Properties:
+document.title = "New Title";          // Set page title
+console.log(document.body);            // Access body element
+console.log(window.innerWidth);        // Get window width
+console.log(window.innerHeight);       // Get window height
+
+
+Listening to Window Events:
+window.addEventListener("resize", function() {
+    console.log("Window resized");
+});
+
+
+11. Performance Enhancements
+Debounce and Throttle: Use setTimeout or libraries like Lodash to optimize frequent events like scrolling or resizing.
+
+
+Fragment for Batch Updates:
+const fragment = document.createDocumentFragment();
+const newDiv = document.createElement("div");
+fragment.appendChild(newDiv);
+parentElement.appendChild(fragment);  // Append all at once

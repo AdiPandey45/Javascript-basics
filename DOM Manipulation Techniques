@@ -14,7 +14,7 @@ document.querySelectorAll(".class");       // Select all matching elements
  
   
 2. Traversing the DOM
-Navigate between parent, child, and sibling elements. 
+Navigate between parent, child, and sibling elements.  
 
 Parent and Ancestors:
 element.parentElement;      // Direct parent

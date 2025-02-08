@@ -4,7 +4,7 @@ The let keyword in JavaScript is used to declare variables. It was introduced in
 Variables declared with let are limited to the block, statement, or expression where they are defined. A block is typically defined by {} (curly braces).
 
 Example:
-
+ 
 {
   let x = 10;
   console.log(x); // 10  

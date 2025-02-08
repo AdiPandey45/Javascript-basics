@@ -16,7 +16,7 @@ The variable x exists only within the {} block.
 2. No Hoisting (or Limited Hoisting)
 Variables declared with let are hoisted, but they are not initialized until their definition is encountered. This creates a "temporal dead zone" (TDZ), where accessing the variable before its declaration results in a ReferenceError.
 
-Example:
+Example: 
 
 console.log(a); // ReferenceError: Cannot access 'a' before initialization
 let a = 5;

@@ -6,7 +6,7 @@ var is function-scoped, meaning it is accessible throughout the entire function 
 If declared outside any function, it becomes global-scoped.
   
 Example:
-function example() {
+function example() { 
     if (true) {
         var x = 10; // Function-scoped
     }

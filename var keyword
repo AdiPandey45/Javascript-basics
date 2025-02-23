@@ -9,7 +9,7 @@ Example:
 function example() { 
     if (true) { 
         var x = 10; // Function-scoped 
-    } 
+    }  
     console.log(x); // ✅ Accessible
 } 
 example();

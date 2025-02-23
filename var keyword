@@ -11,7 +11,7 @@ function example() {
         var x = 10; // Function-scoped
     }
     console.log(x); // ✅ Accessible
-}
+} 
 example();
 Key takeaway: Unlike let and const, var does not have block scope.
 

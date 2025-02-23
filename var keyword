@@ -8,7 +8,7 @@ If declared outside any function, it becomes global-scoped.
 Example:
 function example() { 
     if (true) {
-        var x = 10; // Function-scoped
+        var x = 10; // Function-scoped 
     }
     console.log(x); // ✅ Accessible
 } 

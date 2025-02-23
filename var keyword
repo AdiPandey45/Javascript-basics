@@ -1,4 +1,4 @@
- Everything About var in JavaScript
+Everything About var in JavaScript
 The var keyword in JavaScript is used to declare variables. However, it has some unique characteristics compared to let and const. Here’s a complete breakdown:
 
 1. Scope of var (Function Scope)

@@ -1,0 +1,56 @@
+Everything About var in JavaScript
+The var keyword in JavaScript is used to declare variables. However, it has some unique characteristics compared to let and const. Here’s a complete breakdown:
+
+1. Scope of var (Function Scope)
+var is function-scoped, meaning it is accessible throughout the entire function where it is declared.
+If declared outside any function, it becomes global-scoped.
+  
+Example:
+function example() {
+    if (true) {
+        var x = 10; // Function-scoped
+    }
+    console.log(x); // ✅ Accessible
+}
+example();
+Key takeaway: Unlike let and const, var does not have block scope.
+
+2. Hoisting in var
+Variables declared with var are hoisted to the top of their scope.
+The declaration is moved to the top, but not the initialization.
+  
+Example:
+console.log(a); // undefined (not an error)
+var a = 5;
+console.log(a); // 5
+  
+Explanation:
+The variable a is hoisted, but its value (5) is not assigned until execution reaches that line.
+3. Re-declaration Allowed
+You can redeclare a variable using var without errors, which is not possible with let or const.
+
+  
+Example:
+var x = 10;
+var x = 20; // No error
+console.log(x); // 20
+Issue: This can lead to accidental overwriting of variables.
+
+4. var and Global Object (window or globalThis)
+When a var variable is declared in the global scope, it becomes a property of the global object (window in browsers).
+  
+Example:
+var name = "Adi";
+console.log(window.name); // "Adi" (in browsers)
+Note: let and const do not attach to the global object.
+
+5. Issues with var (Why let and const Are Preferred)
+Lack of block scope can cause unintended issues.
+Hoisting without initialization can lead to unexpected undefined values.
+Re-declaration can accidentally override existing variables.
+Attached to global object, making it accessible globally when not needed.
+  
+6. When Should You Use var?
+Legacy code: Many older JavaScript projects use var.
+If you need function-scoped variables (though rare).
+However, modern JavaScript development prefers let and const due to their safer behavior.

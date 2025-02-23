@@ -4,7 +4,7 @@ The var keyword in JavaScript is used to declare variables. However, it has some
 1. Scope of var (Function Scope)
 var is function-scoped, meaning it is accessible throughout the entire function where it is declared.
 If declared outside any function, it becomes global-scoped.
-  
+   
 Example:
 function example() { 
     if (true) { 

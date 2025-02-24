@@ -11,7 +11,7 @@ Example:
   console.log(x); // 10   
 }
 console.log(x); // ReferenceError: x is not defined
-
+ 
 2. No Reassignment
 A variable declared with const must be initialized at the time of declaration and cannot be reassigned.
 

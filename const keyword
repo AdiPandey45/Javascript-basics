@@ -4,7 +4,7 @@ Key Features of const
 1. Block Scope
 Like let, variables declared with const are block-scoped, meaning they are accessible only within the block {} where they are defined.
 
-Example:
+Example: 
    
 {  
   const x = 10;    

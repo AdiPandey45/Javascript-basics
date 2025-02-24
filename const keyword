@@ -5,7 +5,7 @@ Key Features of const
 Like let, variables declared with const are block-scoped, meaning they are accessible only within the block {} where they are defined.
 
 Example:
- 
+  
 { 
   const x = 10;  
   console.log(x); // 10

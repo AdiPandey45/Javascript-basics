@@ -6,7 +6,7 @@ Like let, variables declared with const are block-scoped, meaning they are acces
 
 Example: 
    
-{  
+{   
   const x = 10;      
   console.log(x); // 10   
 }

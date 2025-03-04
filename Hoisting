@@ -1,0 +1,140 @@
+Hoisting in JavaScript: Complete Guide
+What is Hoisting?
+Hoisting is a JavaScript mechanism where variables and function declarations are moved (hoisted) to the top of their containing scope during the compilation phase, before the code is executed. This means you can use variables and functions before declaring them in the code.
+
+Key Takeaways:
+Only declarations are hoisted, not initializations.
+Function declarations are fully hoisted, but function expressions are not.
+var is hoisted with an undefined value, while let and const remain in the "temporal dead zone" (TDZ) until they are assigned.
+1. Variable Hoisting
+Variables declared with var, let, and const behave differently when hoisted.
+
+1.1 Hoisting with var
+javascript
+Copy
+Edit
+console.log(a);  // Output: undefined
+var a = 10;
+console.log(a);  // Output: 10
+Explanation:
+
+var a; is hoisted to the top, but its value (10) is not.
+console.log(a); before assignment prints undefined.
+Behind the Scenes:
+JavaScript internally treats the above code like this:
+
+javascript
+Copy
+Edit
+var a;
+console.log(a);  // undefined
+a = 10;
+console.log(a);  // 10
+1.2 Hoisting with let and const
+Unlike var, variables declared with let and const are not initialized before execution.
+
+javascript
+Copy
+Edit
+console.log(b);  // ReferenceError: Cannot access 'b' before initialization
+let b = 20;
+console.log(b);
+javascript
+Copy
+Edit
+console.log(c);  // ReferenceError: Cannot access 'c' before initialization
+const c = 30;
+console.log(c);
+Explanation:
+let and const are hoisted but stay in the Temporal Dead Zone (TDZ) until they are assigned.
+TDZ: The time between entering the scope and execution of the variable declaration.
+2. Function Hoisting
+Functions declared using function declarations are hoisted completely, but function expressions and arrow functions are not.
+
+2.1 Function Declarations
+javascript
+Copy
+Edit
+greet();  // Output: "Hello!"
+function greet() {
+    console.log("Hello!");
+}
+Explanation:
+
+Function declarations are fully hoisted, meaning you can call them before their definition.
+2.2 Function Expressions
+Function expressions are not hoisted like function declarations.
+
+javascript
+Copy
+Edit
+sayHello();  // TypeError: sayHello is not a function
+var sayHello = function() {
+    console.log("Hello!");
+};
+Explanation:
+
+var sayHello; is hoisted, but the function assignment is not.
+When sayHello(); is executed, sayHello is undefined.
+2.3 Arrow Functions
+Arrow functions behave like function expressions:
+
+javascript
+Copy
+Edit
+hello();  // TypeError: hello is not a function
+const hello = () => console.log("Hi!");
+3. Class Hoisting
+Classes in JavaScript are not hoisted like functions.
+
+javascript
+Copy
+Edit
+const obj = new MyClass();  // ReferenceError: Cannot access 'MyClass' before initialization
+class MyClass {
+    constructor() {
+        this.name = "JavaScript";
+    }
+}
+Class declarations are hoisted, but they remain in the TDZ.
+4. Best Practices
+Always declare variables at the top to avoid confusion.
+Use let and const instead of var to prevent accidental hoisting issues.
+Use function declarations only when needed before use.
+Use function expressions or arrow functions when defining inline functions.
+5. Summary Table
+Feature	Hoisted?	Initial Value	Can be Used Before Declaration?
+var	✅ Yes	undefined	✅ Yes (but undefined)
+let	✅ Yes (TDZ)	Uninitialized	❌ No (TDZ Error)
+const	✅ Yes (TDZ)	Uninitialized	❌ No (TDZ Error)
+Function Declaration	✅ Fully	Defined Function	✅ Yes
+Function Expression	✅ (Variable only)	undefined	❌ No
+Arrow Function	✅ (Variable only)	undefined	❌ No
+Class Declaration	✅ (TDZ)	Uninitialized	❌ No (TDZ Error)
+6. Common Mistakes
+Mistake 1: Assuming var retains value before assignment
+javascript
+Copy
+Edit
+console.log(x);  // undefined
+var x = 5;
+Fix: Declare at the top.
+
+Mistake 2: Using let/const before declaration
+javascript
+Copy
+Edit
+console.log(y);  // ReferenceError
+let y = 10;
+Fix: Declare before use.
+
+Mistake 3: Calling function expressions before definition
+javascript
+Copy
+Edit
+hello();  // TypeError
+var hello = function() { console.log("Hello!"); };
+Fix: Use function declarations if calling before definition.
+
+Conclusion
+Hoisting in JavaScript moves function and variable declarations to the top of their scope. However, only var variables and function declarations are fully hoisted, while let, const, class declarations, and function expressions are hoisted but remain uninitialized in the Temporal Dead Zone (TDZ). Understanding hoisting helps avoid bugs and write cleaner, predictable code. 🚀
